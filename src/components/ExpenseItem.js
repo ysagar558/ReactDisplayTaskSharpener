@@ -7,6 +7,9 @@ function ExpenseItem(props){
   // const expenseTitle = "props.title";
   // const expenseAmount = 50;
   // const expenseLocation = "Bangalore";
+  function buttonClickHandeler(event){
+    console.log("Button clicked");
+  }
 
   return (
     <Card className="expense-item">
@@ -15,6 +18,7 @@ function ExpenseItem(props){
         <h2>{props.title}</h2>
         <div className="expense-item__price">${props.price}</div>
       </div>
+      <button onClick={buttonClickHandeler}>Change Title</button>
     </Card>
     );
 }
