@@ -10,10 +10,14 @@ const expenses=[
     { id: "3", date: new Date(2023, 10, 11), title: "Pen", price: 1,location:"Hyderabad" },
     { id: "4", date: new Date(2023, 1, 14), title: "Laptop", price: 200,location:"Mumbai" },
 ]
+const addExpenseHandler = (expense) => {
+    console.log(expense);
+  };
+
 
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}></Expenses>
       
     </div>
