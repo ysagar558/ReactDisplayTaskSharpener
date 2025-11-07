@@ -1,6 +1,8 @@
 import React,{useState} from "react";
 import ExpenseFilter from "./ExpensesFilter";
 import "./Expenses.css";
+import ExpensesChart from "./ExpensesChart";
+import ExpensesList from "./ExpensesList";
 import ExpenseItem from "./ExpenseItem";
 import Card from "./Card";
 import ExpensesFilter from "./ExpensesFilter";
@@ -17,6 +19,10 @@ function Expenses(props)
   });
 
   let expensesContent = <p>No expenses found</p>;
+
+  // const filteredExpenses = props.expenses.filter((expense) => {
+  //   return expense.date.getFullYear().toString() === filteredYear;
+  // }); Alternate way
 
   if (filteredExpenses.length > 0) {
     expensesContent = filteredExpenses.map((expense) => {
@@ -38,6 +44,8 @@ function Expenses(props)
       <ExpensesFilter
       selected={filteredYear} onChangeFilter={changeFilterHandler}
       />
+      <ExpensesChart filteredExpensesForChart={filteredExpenses}/>
+      {/* <ExpensesList items={filteredExpenses} /> */}
       {expensesContent}
     </Card>
   );
